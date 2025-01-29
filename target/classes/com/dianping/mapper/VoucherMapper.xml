@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dianping.mapper.VoucherMapper">
+    <insert id="addVoucher">
+        insert into tb_voucher
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="subTitle != null and subTitle != ''">
+                subTitle = #{subTitle},
+            </if>
+            <if test="rules != null and rules != ''">
+                rules = #{rules},
+            </if>
+            <if test="payValue != null">
+                payValue = #{payValue},
+            </if>
+            <if test="actualValue != null">
+                actualValue = #{actualValue},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="stock != null">
+                stock = #{stock}
+            </if>
+            <if test="beginTime != null">
+                beginTime = #{beginTime}
+            </if>
+
+            <if test="endTime != null">
+                endTime = #{endTime}
+            </if>
+
+            <if test="createTime != null">
+                createTime = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                updateTime = #{updateTime}
+            </if>
+        </set>
+        where id = #{id}
+    </insert>
+
+    <select id="queryVoucherOfShop" resultType="com.dianping.pojo.Voucher">
+        select *
+        from tb_voucher
+    </select>
+</mapper>

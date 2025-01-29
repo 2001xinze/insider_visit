@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dianping.mapper.FollowerMapper">
+    <!-- 修改 -->
+    <insert id="save">
+        insert into tb_follow
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="userId != null">
+                userId = #{userId}
+            </if>
+            <if test="followUserId != null">
+                followUser = #{followUser}
+            </if>
+
+            <if test="createTime != null">
+                createTime = #{createTime}
+            </if>
+        </set>
+        where user_id = #{userId} and follow_user_id = #{followUserId}
+    </insert>
+
+</mapper>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dianping.mapper.ShopMapper">
+    <!-- 修改 -->
+    <update id="updateById">
+        update tb_shop
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="typeId != null">
+                typeId = #{typeId},
+            </if>
+            <if test="images != null and images != ''">
+                images = #{images},
+            </if>
+            <if test="area != null and area != ''">
+                area = #{area},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="x != null">
+                x = #{x},
+            </if>
+            <if test="y != null">
+                y = #{y},
+            </if>
+            <if test="avgPrice != null">
+                avgPrice = #{avgPrice}
+            </if>
+            <if test="sold != null">
+                sold = #{sold}
+            </if>
+
+            <if test="comments != null">
+                comments = #{comments}
+            </if>
+
+            <if test="score != null">
+                score = #{score}
+            </if>
+            <if test="openHours != null and openHours != ''">
+                openHours = #{openHours}
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                updateTime = #{updateTime}
+            </if>
+            <if test="distance != null">
+                distance = #{distance}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+<!--    <delete id="delete">-->
+<!--        delete-->
+<!--        from emp-->
+<!--        where id in-->
+<!--        &#45;&#45;               (1,2,3)-->
+<!--        <foreach collection="ids" item="id" separator="," open="(" close=")">-->
+<!--            #{id}-->
+<!--        </foreach>-->
+<!--    </delete>-->
+
+<!--    <select id="list" resultType="com.xinze.pojo.Emp">-->
+<!--        select *-->
+<!--        from emp-->
+<!--        <where>-->
+<!--            <if test="name != null and name != ''">-->
+<!--                name like concat('%', #{name}, '%')-->
+<!--            </if>-->
+<!--            <if test="gender != null">-->
+<!--                and gender = #{gender}-->
+<!--            </if>-->
+<!--            <if test="begin != null and end != null">-->
+<!--                and entrydate between #{begin} and #{end}-->
+<!--            </if>-->
+<!--        </where>-->
+<!--        order by update_time desc-->
+<!--    </select>-->
+</mapper>

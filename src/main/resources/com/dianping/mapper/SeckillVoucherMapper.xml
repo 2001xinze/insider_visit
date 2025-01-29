@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dianping.mapper.SeckillVoucherMapper">
+    <!-- 修改 -->
+    <insert id="addSeckillVoucher">
+        insert into tb_voucher
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="stock != null">
+                stock = #{stock}
+            </if>
+            <if test="beginTime != null">
+                beginTime = #{beginTime}
+            </if>
+
+            <if test="endTime != null">
+                endTime = #{endTime}
+            </if>
+
+            <if test="createTime != null">
+                createTime = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                updateTime = #{updateTime}
+            </if>
+        </set>
+        where id = #{id}
+    </insert>
+
+    <select id="getByVoucherId" resultType="com.dianping.pojo.SeckillVoucher">
+        select *
+        from dianping.tb_seckill_voucher
+        where voucher_id = #{voucherId}
+    </select>
+</mapper>

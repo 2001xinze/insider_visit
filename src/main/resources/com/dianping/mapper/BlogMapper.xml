@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dianping.mapper.BlogMapper">
+    <!-- 修改 -->
+    <insert id="saveBlog">
+        insert into tb_blog
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="shopId != null">
+                shopId = #{shopId}
+            </if>
+            <if test="userId != null">
+                userId = #{userId}
+            </if>
+
+            <if test="icon != null">
+                icon = #{icon}
+            </if>
+
+            <if test="name != null">
+                name = #{name}
+            </if>
+            <if test="isLike != null">
+                isLike = #{isLike}
+            </if>
+            <if test="title != null">
+                title = #{title}
+            </if>
+
+            <if test="images != null">
+                images = #{images}
+            </if>
+            <if test="content != null">
+                content = #{content}
+            </if>
+            <if test="liked != null">
+                liked = #{liked}
+            </if>
+            <if test="comments != null">
+                comments = #{comments}
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                updateTime = #{updateTime}
+            </if>
+        </set>
+        where id = #{id}
+    </insert>
+
+    <select id="list" resultType="com.dianping.pojo.Blog">
+        select *
+        from tb_blog
+        order by liked desc
+    </select>
+
+    <select id="userList" resultType="com.dianping.pojo.Blog">
+        select *
+        from tb_blog
+        where user_id = #{userId}
+        order by liked desc
+    </select>
+</mapper>
