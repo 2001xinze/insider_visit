@@ -2,9 +2,8 @@ package com.dianping.utils;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
-import com.dianping.pojo.UserDTO;
 import com.dianping.pojo.Constant;
-import jakarta.annotation.Resource;
+import com.dianping.pojo.UserDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Configuration;
@@ -17,11 +16,11 @@ import java.util.concurrent.TimeUnit;
 import static com.dianping.pojo.Constant.LOGIN_USER_TTL;
 
 @Configuration
-public class refreshTokenInterceptor implements HandlerInterceptor {
-    @Resource
+public class RefreshTokenInterceptor implements HandlerInterceptor {
+
     private StringRedisTemplate stringRedisTemplate;
 
-    public refreshTokenInterceptor (StringRedisTemplate stringRedisTemplate) {
+    public RefreshTokenInterceptor(StringRedisTemplate stringRedisTemplate) {
         this.stringRedisTemplate = stringRedisTemplate;
     }
 
