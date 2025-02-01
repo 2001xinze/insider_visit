@@ -27,7 +27,7 @@ public class RefreshTokenInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle (HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception{
         // 1. get the token
-        String token = request.getHeader("authorization");
+        String token = request.getHeader("Token");
         if (StrUtil.isBlank(token)) {
             return true;
         }
