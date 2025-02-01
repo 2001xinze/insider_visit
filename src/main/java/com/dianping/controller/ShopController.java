@@ -43,7 +43,7 @@ public class ShopController {
                                    @RequestParam(value = "x", required = false) Double x,
                                    @RequestParam(value = "y", required = false) Double y
     ) {
-        return shopService.queryShopByType(typeId, current, x, y);
+        return  shopService.queryShopByType(typeId, current, x, y);
 
     }
 
