@@ -191,7 +191,7 @@ public class BlogService implements com.dianping.service.BlogService {
         List<Long> ids = new ArrayList<>(typedTuples.size());
         long minTime = 0;
         int os = 1;
-        for (ZSetOperations.TypedTuple<String> tuple : typedTuples) {
+        for (ZSetOperations.TypedTuple<String> tuple : typedTuples) { // 5 4 4 3 3
             // get id
             ids.add(Long.valueOf(tuple.getValue()));
             // get score(timestamp)
@@ -199,7 +199,7 @@ public class BlogService implements com.dianping.service.BlogService {
             if (time == minTime) {
                 os++;
             } else {
-                minTime = minTime;
+                minTime = time;
                 os = 1;
             }
         }

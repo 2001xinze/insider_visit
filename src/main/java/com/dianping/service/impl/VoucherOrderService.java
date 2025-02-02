@@ -94,7 +94,7 @@ public class VoucherOrderService implements com.dianping.service.VoucherOrderSer
 
     private BlockingQueue<VoucherOrder> orderTasks = new ArrayBlockingQueue<>(1024 * 1024);
     private static final ExecutorService SECKILL_ORDER_EXECUTOR = Executors.newSingleThreadExecutor();
-    
+
     @PostConstruct
     private void init () {
         SECKILL_ORDER_EXECUTOR.submit(new VoucherOrderHandler());
@@ -111,7 +111,7 @@ public class VoucherOrderService implements com.dianping.service.VoucherOrderSer
                 } catch (Exception e) {
                     log.error("process the order wrongly");
                 }
-            } 
+            }
         }
     }
 

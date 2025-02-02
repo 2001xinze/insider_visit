@@ -10,15 +10,15 @@
             <if test="id != null">
                 id = #{id},
             </if>
-            <if test="userId != null">
-                userId = #{userId}
+            <if test="user_id != null">
+                user_id = #{userId}
             </if>
-            <if test="followUserId != null">
-                followUser = #{followUser}
+            <if test="follow_user_id != null">
+                follow_user_id = #{followUser}
             </if>
 
-            <if test="createTime != null">
-                createTime = #{createTime}
+            <if test="create_time != null">
+                create_time = #{createTime}
             </if>
         </set>
         where user_id = #{userId} and follow_user_id = #{followUserId}

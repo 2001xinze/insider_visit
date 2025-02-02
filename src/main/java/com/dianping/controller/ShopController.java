@@ -44,7 +44,6 @@ public class ShopController {
                                    @RequestParam(value = "y", required = false) Double y
     ) {
         return  shopService.queryShopByType(typeId, current, x, y);
-
     }
 
 }
