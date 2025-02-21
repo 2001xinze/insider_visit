@@ -14,11 +14,21 @@ public class VoucherOrderController {
     @Resource
     private VoucherOrderService voucherOrderService;
 
+    /**
+     *
+     * @param voucherId
+     * @return
+     */
     @PostMapping("/seckill/{id}")
     public Result seckillVoucher (@PathVariable("id") Long voucherId) {
         return voucherOrderService.seckillVoucher(voucherId);
     }
 
+    /**
+     *
+     * @param voucherId
+     * @return
+     */
     @PostMapping("/{id}")
     public Result normalVoucher (@PathVariable("id") Long voucherId) {
         return Result.fail("the function is not finished");

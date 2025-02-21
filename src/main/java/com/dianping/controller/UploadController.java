@@ -3,7 +3,7 @@ package com.dianping.controller;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import com.dianping.pojo.Result;
-import com.dianping.pojo.SystemConstants;
+import com.dianping.constant.SystemConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,6 +17,11 @@ import java.util.UUID;
 @RequestMapping("upload")
 public class UploadController {
 
+    /**
+     *
+     * @param image
+     * @return
+     */
     @PostMapping("blog")
     public Result uploadImage (@RequestParam("file") MultipartFile image) {
         try {
@@ -34,6 +39,11 @@ public class UploadController {
         }
     }
 
+    /**
+     *
+     * @param fileName
+     * @return
+     */
     @GetMapping("/blog/delete")
     public Result deleteBlogImg (@RequestParam("name") String fileName) {
         File file = new File(SystemConstants.IMAGE_UPLOAD_DIR, fileName);
@@ -44,6 +54,11 @@ public class UploadController {
         return Result.ok();
     }
 
+    /**
+     *
+     * @param originalFilename
+     * @return
+     */
     private String createNewFileName(String originalFilename) {
         // get the suffix
         String suffix = StrUtil.subAfter(originalFilename, ".", true);

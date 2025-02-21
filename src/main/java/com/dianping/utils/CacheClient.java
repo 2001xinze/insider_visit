@@ -17,8 +17,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
-import static com.dianping.pojo.Constant.CACHE_NULL_TTL;
-import static com.dianping.pojo.Constant.LOCK_SHOP_KEY;
+import static com.dianping.constant.Constant.CACHE_NULL_TTL;
+import static com.dianping.constant.Constant.LOCK_SHOP_KEY;
 
 @Slf4j
 @Component

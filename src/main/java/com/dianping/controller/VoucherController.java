@@ -37,12 +37,22 @@ public class VoucherController {
         return Result.ok(voucher.getId());
     }
 
+    /**
+     *
+     * @param shopId
+     * @return
+     */
     @GetMapping("/list/{shopId}")
     public Result queryVoucherOfShop (@PathVariable("shopId") Long shopId) {
         Voucher voucher = voucherService.queryVoucherOfShop(shopId);
         return Result.ok(voucher);
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @GetMapping("/seckill/{id}")
     public Result getById(@PathVariable("id") Long id) {
         SeckillVoucher seckillVoucher = seckillVoucherService.getByVoucherId(id);

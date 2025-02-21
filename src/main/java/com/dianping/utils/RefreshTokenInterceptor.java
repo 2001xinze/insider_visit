@@ -2,7 +2,7 @@ package com.dianping.utils;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
-import com.dianping.pojo.Constant;
+import com.dianping.constant.Constant;
 import com.dianping.pojo.UserDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static com.dianping.pojo.Constant.LOGIN_USER_TTL;
+import static com.dianping.constant.Constant.LOGIN_USER_TTL;
 
 @Configuration
 public class RefreshTokenInterceptor implements HandlerInterceptor {

@@ -37,6 +37,14 @@ public class ShopController {
         return shopService.update(shop);
     }
 
+    /**
+     *
+     * @param typeId
+     * @param current
+     * @param x
+     * @param y
+     * @return
+     */
     @GetMapping("/of/type")
     public Result queryShopByType (@RequestParam("typeId") Integer typeId,
                                    @RequestParam(value = "current", defaultValue = "1") Integer current,

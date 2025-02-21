@@ -10,7 +10,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import static com.dianping.pojo.Constant.SECKILL_STOCK_KEY;
+import static com.dianping.constant.Constant.SECKILL_STOCK_KEY;
 
 @Slf4j
 @Service

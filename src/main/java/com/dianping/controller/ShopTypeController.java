@@ -16,6 +16,10 @@ public class ShopTypeController {
     @Resource
     private ShopTypeService shopTypeService;
 
+    /**
+     *
+     * @return
+     */
     @GetMapping("list")
     public Result queryTypeList () {
         List<ShopType> typeList = shopTypeService.queryShopType();

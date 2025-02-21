@@ -48,12 +48,21 @@ public class UserController {
         return Result.fail("function not finished");
     }
 
+    /**
+     *
+     * @return
+     */
     @GetMapping("/me")
     public Result me () {
         UserDTO user = UserHolder.getUser();
         return Result.ok(user);
     }
 
+    /**
+     *
+     * @param userId
+     * @return
+     */
     @GetMapping("/info/{id}")
     public Result info(@PathVariable("id") Long userId){
         // 查询详情
@@ -68,16 +77,29 @@ public class UserController {
         return Result.ok(info);
     }
 
+    /**
+     *
+     * @return
+     */
     @PostMapping("/sign")
     public Result sign(){
         return userService.sign();
     }
 
+    /**
+     *
+     * @return
+     */
     @GetMapping("/sign/count")
     public Result signCount(){
         return userService.signCount();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @GetMapping("/{id}")
     public Result queryUserById (@PathVariable("id") Long id) {
         return userService.queryUserById(id);

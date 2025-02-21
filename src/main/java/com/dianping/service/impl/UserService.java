@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static com.dianping.pojo.Constant.*;
+import static com.dianping.constant.Constant.*;
 
 @Slf4j
 @Service

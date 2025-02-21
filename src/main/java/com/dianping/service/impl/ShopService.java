@@ -1,6 +1,7 @@
 package com.dianping.service.impl;
 
 import cn.hutool.json.JSONUtil;
+import com.dianping.constant.Constant;
 import com.dianping.mapper.ShopMapper;
 import com.dianping.pojo.*;
 import com.dianping.utils.CacheClient;
@@ -24,9 +25,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static com.dianping.pojo.Constant.CACHE_SHOP_KEY;
-import static com.dianping.pojo.Constant.CACHE_SHOP_TTL;
-import static com.dianping.pojo.SystemConstants.MAX_PAGE_SIZE;
+import static com.dianping.constant.Constant.CACHE_SHOP_KEY;
+import static com.dianping.constant.Constant.CACHE_SHOP_TTL;
+import static com.dianping.constant.SystemConstants.MAX_PAGE_SIZE;
 
 @Slf4j
 @Service

@@ -1,6 +1,7 @@
 package com.dianping.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import com.dianping.constant.SystemConstants;
 import com.dianping.mapper.BlogMapper;
 import com.dianping.mapper.FollowerMapper;
 import com.dianping.pojo.*;
@@ -19,8 +20,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.dianping.pojo.Constant.BLOG_LIKED_KEY;
-import static com.dianping.pojo.Constant.FEED_KEY;
+import static com.dianping.constant.Constant.BLOG_LIKED_KEY;
+import static com.dianping.constant.Constant.FEED_KEY;
 
 @Service
 public class BlogService implements com.dianping.service.BlogService {

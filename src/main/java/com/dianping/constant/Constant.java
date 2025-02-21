@@ -1,4 +1,4 @@
-package com.dianping.pojo;
+package com.dianping.constant;
 
 public class Constant {
     public static final String LOGIN_CODE_KEY = "login:code";
